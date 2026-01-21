@@ -2,10 +2,10 @@
 
 ## Overview
 * [Definition](#definition)
-* [For Pentester](#for-pentester)
+* [For Penetration Tester](#for-penetration-tester)
     * [Exploitation](#exploitation)
-* [For Software Developer](#for-software-developer)
-    * [Potential Mitigation](#potential-mitigation)
+* [For Software Development Engineer](#for-software-development-engineer)
+    * [Mitigation](#mitigation)
 * [CVSS & CWE](#cvss-and-cwe)
 
 ---
@@ -20,7 +20,7 @@ As a result, IDOR can lead to unauthorized data disclosure, data tampering, or e
 
 ---
 
-## For Pentester
+## For Penetration Tester
 
 #### Exploitation
 
@@ -53,9 +53,9 @@ Typical exploitation steps include:
 
 ---
 
-## For Software Developer
+## For Software Development Engineer
 
-#### Potential Mitigation
+#### Mitigation
 
 Mitigating IDOR vulnerabilities requires consistently enforcing authorization at the backend for every object access. Developers should assume that any identifier sent by the client can be tampered with and must therefore be validated against the authenticated user’s permissions before any action is performed.
 
@@ -96,3 +96,7 @@ IDOR vulnerabilities are commonly rated as medium to high severity, depending on
     * **CWE-863** – Incorrect Authorization
 
 > The final severity depends on the sensitivity of the exposed object and whether read-only access or write/delete actions are possible.
+
+---
+
+Written on *21 January 2026* by [rion](https://rion.pwn.so)

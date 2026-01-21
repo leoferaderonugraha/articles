@@ -1,9 +1,25 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>{{ title }}</title>
-<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <meta charset="UTF-8">
+    <title>Entries</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 </head>
 <body>
-{{ content | safe }}
+    <h1>Security Entries</h1>
+
+    <p>
+        Below is a list of thoughtfully writings about vulnerabilities from two perspective, both penetration tester and software development engineer.
+    </p>
+
+    <ol class="entry-list">
+        {% for article in articles %}
+            <li>
+                <a href="/{{ article }}">{{ article }}</a>
+            </li>
+        {% endfor %}
+    </ol>
 </body>
 </html>

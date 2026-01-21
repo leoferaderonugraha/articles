@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>404 — Page Not Found</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --text-main: #1f2937;
+            --text-muted: #6b7280;
+            --border-light: #e5e7eb;
+            --bg-code: #0f172a;
+            --bg-inline-code: #f1f5f9;
+            --bg-toc: #f8fafc;
+            --link-main: #2563eb;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.7;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+            color: var(--text-main);
+            background-color: #ffffff;
+        }
+
+        a {
+            color: var(--link-main);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            padding: 40px;
+            background-color: #ffffff;
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            margin-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-light);
+            padding-bottom: 0.4rem;
+        }
+
+        p {
+            margin: 1rem 0;
+            color: var(--text-muted);
+        }
+
+        .code {
+            margin: 24px 0;
+            background-color: var(--bg-code);
+            color: #e5e7eb;
+            padding: 16px;
+            border-radius: 8px;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                "Liberation Mono", "Courier New", monospace;
+            font-size: 0.95rem;
+            overflow-x: auto;
+        }
+
+        .actions {
+            margin-top: 32px;
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 16px;
+            border-radius: 8px;
+            border: 1px solid var(--border-light);
+            font-weight: 500;
+        }
+
+        .btn-primary {
+            background-color: var(--link-main);
+            color: #ffffff;
+            border-color: var(--link-main);
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+            text-decoration: none;
+        }
+
+        .btn-secondary {
+            background-color: #ffffff;
+            color: var(--text-main);
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 640px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>404 — Page Not Found</h1>
+
+        <p>
+            The page you’re looking for doesn’t exist, was moved,
+            or the URL might be incorrect.
+        </p>
+
+        <div class="code">
+        {{ request.method }} {{ request.path }} {{ request.environ.get('SERVER_PROTOCOL', 'HTTP/1.1') }}
+        → 404 Not Found
+        </div>
+
+        <div class="actions">
+            <a href="/" class="btn btn-primary">Go Home</a>
+            <a href="javascript:history.back()" class="btn btn-secondary">
+                Go Back
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        If you believe this is an error, please contact the administrator.
+    </footer>
+</body>
+</html>
